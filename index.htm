@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>Knewton Style Guide</title>
+
+    <link rel="stylesheet" href="styles/css/styleguide.css" />
+    <link rel="stylesheet" href="styles/css/application.css" />
+</head>
+<body>
+
+    <div class="content"></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/dust-core.js"></script>
+    <script src="js/dust-helpers.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/templates.js"></script>
+    <script>
+        function generateNav() {
+            var sections = $('.sg-sections > .sg-section'),
+                $nav = $('.sg-nav ul');
+
+            var getLiHtmlForSection = function($s) {
+                var title = $s.attr('title'),
+                    id = $s.attr('id');
+
+                var subSections = $s.find('.sg-section');
+                var subsectionHtml = '';
+                if (subSections.length) {
+                    subsectionHtml = '<ul>';
+                    subSections.each(function(i) {
+                        var $ss = $(subSections[i]);
+                        subsectionHtml += getLiHtmlForSection($ss);
+                    });
+                    subsectionHtml += '</ul>';
+                }
+
+                var liHtml = '<li><a href="#' + id + '">' + title + '</a>' + subsectionHtml + '</li>';
+                return liHtml;
+            };
+
+            sections.each(function(i) {
+                var $s = $(sections[i]);
+                var liHtml = getLiHtmlForSection($s);
+                $nav.append(liHtml);
+            });
+
+            $('.sg-nav li a').on('click', function(e) {
+                var $el = $(this),
+                    id = $el.attr('href');
+
+                $('.sg-nav li a').removeClass('active');
+                $el.addClass('active');
+
+                // Find the parent sg-section if any
+                var $toShow = $(id).closest('.sg-sections > .sg-section');
+
+                $('.sg-section').removeClass('active');
+                $toShow.addClass('active');
+            });
+        };
+
+        dust.render("_sg/styleguide", {}, function(err, out) {
+            if (err) {
+                console.error(err);
+            } else {
+                $('.content').html(out);
+
+                generateNav();
+
+                // Make the first section visible
+                $('.sg-sections > .sg-section').first().addClass('active');
+            }
+        });
+    </script>
+</body>
+</html>
