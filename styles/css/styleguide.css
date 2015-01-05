@@ -221,52 +221,60 @@ ul.reviewables li .value:last-child { margin-right: 0; }
 /* line 58, ../../../styles/sass/partials/_forms.scss */
 input, .input-text, .thick-input { width: 100%; font-size: 1rem; line-height: 2rem; padding: 0 .5rem; border: 1px solid #d0d0d0; }
 /* line 68, ../../../styles/sass/partials/_forms.scss */
+input.error, .input-text.error, .thick-input.error { border-color: #f00; color: #f00; }
+/* line 73, ../../../styles/sass/partials/_forms.scss */
+input.success, .input-text.success, .thick-input.success { border-color: #86d886; color: #008000; }
+/* line 78, ../../../styles/sass/partials/_forms.scss */
 input:focus, .input-text:focus, .thick-input:focus { outline: none; border: 1px solid #1bacb6; }
 
-/* line 74, ../../../styles/sass/partials/_forms.scss */
+/* line 84, ../../../styles/sass/partials/_forms.scss */
 .input-text { position: relative; }
-/* line 78, ../../../styles/sass/partials/_forms.scss */
-.input-text:not(:focus):after { content: "\e012"; position: absolute; font-family: knewcons; color: #b6b6b6; right: 0; padding: 0 .5rem; }
-/* line 88, ../../../styles/sass/partials/_forms.scss */
+/* line 96, ../../../styles/sass/partials/_forms.scss */
+.input-text.success:not(:focus):after { position: absolute; font-family: knewcons; top: 0; right: 0; padding: 0 .5rem; content: "\e006"; color: #86d886; }
+/* line 102, ../../../styles/sass/partials/_forms.scss */
+.input-text.error:not(:focus):after { position: absolute; font-family: knewcons; top: 0; right: 0; padding: 0 .5rem; content: "\e005"; color: #f00; }
+/* line 109, ../../../styles/sass/partials/_forms.scss */
+.input-text:not(:focus):after { position: absolute; font-family: knewcons; top: 0; right: 0; padding: 0 .5rem; content: "\e012"; color: #a9a9a9; }
+/* line 116, ../../../styles/sass/partials/_forms.scss */
 .input-text:empty:not(:focus):before { content: attr(data-placeholder); color: #a9a9a9; }
 
-/* line 95, ../../../styles/sass/partials/_forms.scss */
+/* line 123, ../../../styles/sass/partials/_forms.scss */
 .labels label { font-weight: 300; }
-/* line 98, ../../../styles/sass/partials/_forms.scss */
+/* line 126, ../../../styles/sass/partials/_forms.scss */
 .labels label input { margin-right: 5px; }
-/* line 102, ../../../styles/sass/partials/_forms.scss */
+/* line 130, ../../../styles/sass/partials/_forms.scss */
 .labels label + label { margin-left: 15px; }
 
-/* line 108, ../../../styles/sass/partials/_forms.scss */
+/* line 136, ../../../styles/sass/partials/_forms.scss */
 .label-group { display: table; border-collapse: separate; border-spacing: 15px; }
-/* line 113, ../../../styles/sass/partials/_forms.scss */
+/* line 141, ../../../styles/sass/partials/_forms.scss */
 .label-group .label-wrapper { display: table-row; }
-/* line 116, ../../../styles/sass/partials/_forms.scss */
+/* line 144, ../../../styles/sass/partials/_forms.scss */
 .label-group .label-wrapper label { display: table-cell; text-align: right; vertical-align: middle; }
-/* line 122, ../../../styles/sass/partials/_forms.scss */
+/* line 150, ../../../styles/sass/partials/_forms.scss */
 .label-group .label-wrapper input { display: table-cell; width: 300px; }
 
-/* line 132, ../../../styles/sass/partials/_forms.scss */
+/* line 160, ../../../styles/sass/partials/_forms.scss */
 form.standard textarea { width: 100%; min-height: 110px; padding: 5px; color: #999; font-weight: 500; font-size: 12px; border: 1px solid #eaeaea; }
-/* line 142, ../../../styles/sass/partials/_forms.scss */
+/* line 170, ../../../styles/sass/partials/_forms.scss */
 form.standard .half { min-height: 55px; }
-/* line 146, ../../../styles/sass/partials/_forms.scss */
+/* line 174, ../../../styles/sass/partials/_forms.scss */
 form.standard input { border: 1px solid #eaeaea; line-height: 30px; padding: 0 8px; color: #999; font-weight: 500; font-size: 12px; }
 
-/* line 157, ../../../styles/sass/partials/_forms.scss */
+/* line 185, ../../../styles/sass/partials/_forms.scss */
 .input-group.date { position: relative; display: table; border-collapse: separate; }
-/* line 162, ../../../styles/sass/partials/_forms.scss */
+/* line 190, ../../../styles/sass/partials/_forms.scss */
 .input-group.date .form-control { height: 34px; padding: 6px 12px; font-size: 14px; line-height: 1.428571429; color: #555; vertical-align: middle; background-color: #fff; background-image: none; border: 1px solid #ccc; border-radius: 0; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; width: 100%; margin-bottom: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; display: table-cell; }
-/* line 182, ../../../styles/sass/partials/_forms.scss */
+/* line 210, ../../../styles/sass/partials/_forms.scss */
 .input-group.date .input-group-addon { padding: 2px 12px 1px 8px; font-size: 14px; font-weight: normal; line-height: 1; color: #555; text-align: center; background-color: #eee; border: 1px solid #ccc; border-left: 0; border-radius: 0; border-bottom-left-radius: 0; border-top-left-radius: 0; width: 1%; white-space: nowrap; vertical-align: middle; display: table-cell; }
-/* line 201, ../../../styles/sass/partials/_forms.scss */
+/* line 229, ../../../styles/sass/partials/_forms.scss */
 .input-group.date .input-group-addon .icon { position: relative; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; -webkit-font-smoothing: antialiased; font-style: normal; font-weight: normal; line-height: 1; cursor: pointer; width: 16px; height: 16px; }
-/* line 214, ../../../styles/sass/partials/_forms.scss */
+/* line 242, ../../../styles/sass/partials/_forms.scss */
 .input-group.date .input-group-addon .icon:before { font-size: 24px; }
 
-/* line 220, ../../../styles/sass/partials/_forms.scss */
+/* line 248, ../../../styles/sass/partials/_forms.scss */
 .field-block { margin-bottom: 20px; }
-/* line 223, ../../../styles/sass/partials/_forms.scss */
+/* line 251, ../../../styles/sass/partials/_forms.scss */
 .field-block label { font-size: 21px; font-weight: 300; margin-top: 0; line-height: 1.3em; }
 
 /* Neat 1.7.0 http://neat.bourbon.io Copyright 2012-2014 thoughtbot, inc. MIT License */
@@ -1135,6 +1143,6 @@ h2 { margin: 0; }
 .color .color-name { height: 48px; line-height: 48px; }
 
 /* line 199, ../../../styles/sass/styleguide.scss */
-.snippet, .sample { background: #f1f1f1; margin: 1rem 0; padding: .5rem; font-family: monospace; overflow-x: scroll; }
+.snippet, .sample { background: #f1f1f1; margin: 1rem 0; padding: .5rem; font-family: monospace; overflow-x: auto; }
 /* line 208, ../../../styles/sass/styleguide.scss */
 .snippet .snippet, .sample .snippet { margin: 0; padding: 0; }

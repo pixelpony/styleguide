@@ -15,7 +15,19 @@
     <script src="js/dust-core.js"></script>
     <script src="js/dust-helpers.js"></script>
     <script src="js/helpers.js"></script>
+
+    <!-- REMOVE -->
+    <script src="js/jquery.dynamic-input.js"></script>
+
     <script src="js/templates.js"></script>
+
+    <style>
+
+    .di-menu {
+        position: absolute;
+    }
+
+    </style>
     <script>
         function generateNav() {
             var sections = $('.sg-sections > .sg-section'),
@@ -73,6 +85,8 @@
                 $('.sg-sections > .sg-section').first().addClass('active');
             }
         });
+
+        $('.input-text').dynamicInput();
     </script>
 </body>
 </html>

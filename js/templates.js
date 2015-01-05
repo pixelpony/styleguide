@@ -11,7 +11,7 @@
  // _sg/components/field.dust
 (function(){dust.register("_sg/components/field",body_0);function body_0(chk,ctx){return chk.write("<div class=\"form-group chosen-date\"><label>Optional: Choose an end date</label><div class=\"input-group date date-field\"><input id=\"endsAt\" type=\"text\" name=\"endsAt\" ").section(ctx._get(false, ["endsAt"]),ctx,{"block":body_1},null).write(" class=\"form-control\"><span class=\"input-group-addon\"><span class=\"icon icon-calendar\"></span></span></div></div>");}function body_1(chk,ctx){return chk.write("value=\"").helper("formatDate",ctx,{},{"date":body_2,"format":"MM/DD/YYYY"}).write("\"");}function body_2(chk,ctx){return chk.reference(ctx._get(true,[]),ctx,"h");}return body_0;})();
  // _sg/components/input-text-dynamic.dust
-(function(){dust.register("_sg/components/input-text-dynamic",body_0);function body_0(chk,ctx){return chk.write("<div class=\"input-text\" contenteditable=\"true\" name=\"field-name\"\ndata-placeholder=\"Field value\" data-submit=\"/course/123-456\" />");}return body_0;})();
+(function(){dust.register("_sg/components/input-text-dynamic",body_0);function body_0(chk,ctx){return chk.write("<div class=\"input-text\" contenteditable=\"true\" data-name=\"field-name\"\n     data-placeholder=\"Field value\" data-submit=\"/course/123-456\" />");}return body_0;})();
  // _sg/components/input-text.dust
 (function(){dust.register("_sg/components/input-text",body_0);function body_0(chk,ctx){return chk.write("<input type=\"text\" name=\"field-name\" placeholder=\"Field value\" />");}return body_0;})();
  // _sg/components/list.dust
