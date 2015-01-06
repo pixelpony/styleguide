@@ -5,7 +5,6 @@
     <title>Knewton Style Guide</title>
 
     <link rel="stylesheet" href="styles/css/styleguide.css" />
-    <link rel="stylesheet" href="styles/css/application.css" />
 </head>
 <body>
 
@@ -15,19 +14,10 @@
     <script src="js/dust-core.js"></script>
     <script src="js/dust-helpers.js"></script>
     <script src="js/helpers.js"></script>
-
-    <!-- REMOVE -->
-    <script src="js/jquery.dynamic-input.js"></script>
-
+    <script src="js/highlight.pack.js"></script>
+    <script src="js/jquery.easydropdown.min.js"></script>
     <script src="js/templates.js"></script>
 
-    <style>
-
-    .di-menu {
-        position: absolute;
-    }
-
-    </style>
     <script>
         function generateNav() {
             var sections = $('.sg-sections > .sg-section'),
@@ -73,6 +63,14 @@
             });
         };
 
+        function highlightSnippets() {
+            hljs.configure({
+              tabReplace:   '   ',
+              useBR:    true
+            });
+            hljs.initHighlightingOnLoad();
+        };
+
         dust.render("_sg/styleguide", {}, function(err, out) {
             if (err) {
                 console.error(err);
@@ -80,13 +78,12 @@
                 $('.content').html(out);
 
                 generateNav();
+                highlightSnippets();
 
                 // Make the first section visible
                 $('.sg-sections > .sg-section').first().addClass('active');
             }
         });
-
-        $('.input-text').dynamicInput();
     </script>
 </body>
 </html>
