@@ -24,31 +24,29 @@ module.exports = function (grunt) {
             }
         },
 
-        growl : {
-            sassCompile : {
-                title : 'SASS COMPILE DONE!',
-                message : 'By the way, you look terrific today. Have you been working out? I love that shirt!'
+        growl: {
+            sassCompile: {
+                title: 'SASS COMPILE DONE!',
+                message: 'By the way, you look terrific today. Have you been working out? I love that shirt!'
             },
-            dustCompile : {
-                title : 'DUST COMPILE DONE!',
-                message : 'boop'
+            dustCompile: {
+                title: 'DUST COMPILE DONE!',
+                message: 'boop'
             },
             fontsUpdate: {
-                title : 'FONTS UPDATED',
-                message : 'bork'
+                title: 'FONTS UPDATED',
+                message: 'bork'
             }
         },
 
         dust: {
             compile: {
-                files: [
-                    {
-                        "dist/js/templates.js": 'templates/**/*.dust'
-                    }
-                ],
+                files: [{
+                    "dist/js/templates.js": 'templates/**/*.dust'
+                }],
                 options: {
                     wrapper: false,
-                    runtime: true,
+                    runtime: false,
                     relative: true,
                     basePath: 'templates/'
                 }
@@ -62,7 +60,7 @@ module.exports = function (grunt) {
             },
             compass: {
                 files: ['styles/**/*.{scss,sass}'],
-                tasks: ['scsslint', 'compass', 'autoprefixer','growl:sassCompile'],
+                tasks: ['scsslint', 'compass', 'autoprefixer', 'growl:sassCompile'],
                 options: {
                     livereload: false
                 }
@@ -85,10 +83,11 @@ module.exports = function (grunt) {
                 generatedImagesDir: 'dist/styles/css/images/generated',
                 javascriptsDir: 'scripts',
                 importPath: ['bower_components',
-                             'bower_components/bootstrap-sass-twbs/assets/stylesheets',
-                             'bower_components/bootstrap-datepicker/css',
-                             'bower_components/bourbon/app/assets/stylesheets',
-                             'bower_components/neat/app/assets/stylesheets'],
+                    'bower_components/bootstrap-sass-twbs/assets/stylesheets',
+                    'bower_components/bootstrap-datepicker/css',
+                    'bower_components/bourbon/app/assets/stylesheets',
+                    'bower_components/neat/app/assets/stylesheets'
+                ],
                 relativeAssets: false,
                 assetCacheBuster: false,
                 debugInfo: false,
@@ -116,6 +115,19 @@ module.exports = function (grunt) {
             }
         },
 
+        jekyll: {
+            options: { // Universal options
+                bundleExec: false,
+                src: './docs'
+            },
+            dist: { // Target
+                options: { // Target options
+                    dest: './dist/docs',
+                    config: './docs/_config.yml'
+                }
+            }
+        },
+
         copy: {
             fonts: {
                 files: [{
@@ -140,12 +152,13 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     src: ['bower_components/jquery/dist/jquery.min.js',
-                          'bower_components/highlightjs/highlight.pack.js',
-                          'bower_components/easydropdown/jquery.easydropdown.min.js',
-                          'bower_components/bootstrap/js/modal.js',
-                          'bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js',
-                          'bower_components/dustjs-linkedin/dist/dust-core.js',
-                          'bower_components/dustjs-linkedin-helpers/dist/dust-helpers.js'],
+                        'bower_components/highlightjs/highlight.pack.js',
+                        'bower_components/easydropdown/jquery.easydropdown.min.js',
+                        'bower_components/bootstrap/js/modal.js',
+                        'bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js',
+                        'bower_components/dustjs-linkedin/dist/dust-core.js',
+                        'bower_components/dustjs-linkedin-helpers/dist/dust-helpers.js'
+                    ],
                     dest: 'dist/js/',
                     flatten: true
                 }]

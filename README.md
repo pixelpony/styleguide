@@ -12,7 +12,7 @@ First of all, decide where you want your local copy to be and clone the project:
 In order to run your local copy, you'll need to install a bunch of dependencies: npm, grunt, bower. Make sure you're using sudo, if you run into permission issues.
 
     brew install node
-    gem update --system && gem install scss-lint && gem install compass
+    gem update --system && gem install scss-lint && gem install compass && gem install jekyll
     npm install -g grunt-cli bower
 
 To setup:
@@ -28,7 +28,7 @@ To run:
 Grunt run takes care of compiling and building tasks, and watches any new changes to the code and recompiles and builds whenever new changes are made.
 
 Similarly, you can setup a server that automatically, compiles, builds and reloads the style guide whenever changes are made.
-  
+
     grunt server
 
 To configure your sublime text to use only 2 spaces per tab for scss, install the scss plugin,
@@ -38,7 +38,7 @@ open a .scss file, and open preferences > settings - more > syntax specific, and
 Requirements
 -------------
 
-Tasks 
+Tasks
 - Bower package, use a local path as a repository
 - Dust compiling, Compassing SCSS
 - Autoprefixer: add vendor prefixes to CSS directives that need it.
