@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>JavaScript Coding Style</title>
+    <meta name="description" content="The following borrows heavily from ‘Node.js Style Guide’ by Felix Geisendörfer’s which is licensed underthe CC BY-SA 3.0 license.">
+
+    <link rel="stylesheet" href="/styles/css/sg.css"">
+    <link rel="canonical" href="http://localhost:8080/docs//javascript/2015/01/19/js-style.html">
+    <link rel="alternate" type="application/rss+xml" title="Knewton Front End Coding Guidelines" href="http://localhost:8080/docs/ /feed.xml " />
+</head>
+
+
+<body>
+
+    <header class="sg-header">
+    <div class="wrapper">
+        <div class="container">
+            <a href="/index.htm" id="logo" class="logo-header">
+                <img src="/styles/images/logo-white.png">
+            </a>
+            <h1><a href="">Knewton Style Guide / UI Library</a>
+            </h1>
+        </div>
+    </div>
+</header>
+
+
+
+
+<div class="main sg">
+    <nav class="sg-nav">
+        <div class="sg-nav-developer-guide">
+            <a href="/docs/">DEVELOPER DOCS</a>
+            <ul class="sg-docs-post-list">
+                
+                    <li>
+                        <a class="post-link" href="/docs//javascript/2015/01/19/js-style.html">JavaScript Coding Style</a>
+                        <span class="post-meta">Jan 19, 2015</span>
+                    </li>
+                
+            </ul>
+        </div>
+    </nav>
+    <div class="sg-sections">
+        <section class="sg-section active">
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="sg-docs-post">
+    <h1 class="sg">JavaScript Coding Style</h1>
+    <!--
+    <p class="post-meta">Jan 19, 2015</p>
+    -->
+    <article class="post-content">
+        <p>The following borrows heavily from <a href="https://github.com/felixge/node-style-guide">‘Node.js Style Guide’</a> by <a href="http://felixge.de">Felix Geisendörfer’s</a> which is licensed under
+the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> license.</p>
+
+<ol>
+  <li>Spaces, not tabs. Four spaces.</li>
+  <li>No trailing whitespace.</li>
+  <li>Use Semicolons.</li>
+  <li>Use single quotes</li>
+  <li>Opening braces go on the same line</li>
+</ol>
+
+<h2 id="use-four-spaces-for-indention-not-tabs">Use four spaces for indention. Not tabs.</h2>
+
+<p>Use four spaces for indenting your code and swear an oath to never mix tabs and
+spaces - a special kind of hell is awaiting you otherwise.</p>
+
+<h2 id="no-trailing-whitespace">No trailing whitespace</h2>
+
+<p>Just like you brush your teeth after every meal, you clean up any trailing
+whitespace in your JS files before committing. Otherwise the rotten smell of
+careless neglect will eventually drive away contributors and/or co-workers.</p>
+
+<h2 id="use-semicolons">Use Semicolons</h2>
+
+<p>According to <a href="http://news.ycombinator.com/item?id=1547647">scientific research</a>, the usage of semicolons is
+a core value of our community. Consider the points of <a href="http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding">the opposition</a>, but
+be a traditionalist when it comes to abusing error correction mechanisms for
+cheap syntactic pleasures.</p>
+
+<h2 id="characters-per-line">80 characters per line</h2>
+
+<p>Limit your lines to 80 characters. Yes, screens have gotten much bigger over the
+last few years, but your brain has not. Use the additional room for split screen,
+your editor supports that, right?</p>
+
+<h2 id="use-single-quotes">Use single quotes</h2>
+
+<p>Use single quotes, unless you are writing JSON.</p>
+
+<p><em>Right:</em></p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span><span class="p">;</span></code></pre></div>
+
+<p><em>Wrong:</em></p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="s2">&quot;bar&quot;</span><span class="p">;</span></code></pre></div>
+
+<h2 id="opening-braces-go-on-the-same-line">Opening braces go on the same line</h2>
+
+<p>Your opening braces go on the same line as the statement.</p>
+
+<p><em>Right:</em></p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;winning&#39;</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+<p><em>Wrong:</em></p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;losing&#39;</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Also, notice the use of whitespace before and after the condition statement.</p>
+
+<h2 id="method-chaining">Method chaining</h2>
+
+<p>One method per line should be used if you want to chain methods.</p>
+
+<p>You should also indent these methods so it’s easier to tell they are part of the same chain.</p>
+
+<p><em>Right:</em></p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">User</span>
+  <span class="p">.</span><span class="nx">findOne</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;foo&#39;</span> <span class="p">})</span>
+  <span class="p">.</span><span class="nx">populate</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">});</span></code></pre></div>
+
+<p><em>Wrong:</em></p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">User</span>
+<span class="p">.</span><span class="nx">findOne</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;foo&#39;</span> <span class="p">})</span>
+<span class="p">.</span><span class="nx">populate</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="nx">User</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;foo&#39;</span> <span class="p">})</span>
+  <span class="p">.</span><span class="nx">populate</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">});</span>
+
+<span class="nx">User</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;foo&#39;</span> <span class="p">}).</span><span class="nx">populate</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="nx">User</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;foo&#39;</span> <span class="p">}).</span><span class="nx">populate</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">});</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span></code></pre></div>
+
+
+    </article>
+</div>
+
+        </div>
+    </div>
+
+            </section>
+    </div>
+</div>
+
+
+</body>
+
+</html>

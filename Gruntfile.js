@@ -72,6 +72,10 @@ module.exports = function (grunt) {
             fonts: {
                 files: ['styles/fonts/**/*'],
                 tasks: ['copy:fonts', 'growl:fontsUpdate']
+            },
+            jekyll: {
+                files: ['docs/**/*'],
+                tasks: ['jekyll']
             }
         },
 
@@ -118,12 +122,12 @@ module.exports = function (grunt) {
         jekyll: {
             options: { // Universal options
                 bundleExec: false,
-                src: './docs'
+                src: 'docs/',
             },
             dist: { // Target
                 options: { // Target options
-                    dest: './dist/docs',
-                    config: './docs/_config.yml'
+                    dest: 'dist/docs/',
+                    config: 'docs/_config.yml'
                 }
             }
         },
@@ -199,7 +203,9 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('build', 'Builds.', ['scsslint', 'copy', 'dust', 'compass']);
+    grunt.registerTask('build', 'Builds.', ['scsslint', 'jekyll',
+        'copy', 'dust', 'compass'
+    ]);
     grunt.registerTask('run', 'Builds and watches the style guide for changes.', ['build', 'watch']);
     grunt.registerTask('deploy', 'Deploys to github', ['build', 'copy:deploy', 'githubPages:target']);
     grunt.registerTask('server', ['express', 'open', 'watch']);

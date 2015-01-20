@@ -4,20 +4,11 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+    <h1 class="sg">Developer Guidelines</h1>
+    <p>These docs are generated using <a href="http://jekyllrb.com/docs/home">Jekyll</a>.</p>
+    <p>
+        Each article exists as a distinct <a href="http://en.support.wordpress.com/markdown-quick-reference/">markdown</a>
+        file in /docs/_posts. A static
+        version of the docs is generated using Grunt.</p>
+    <p>Please add/remove/edit articles at any time throught the normal pull request process. </p>
 </div>

@@ -8,6 +8,7 @@
 
     <nav class="sg-nav">
         <ul></ul>
+        <div class="sg-nav-developer-guide"><a href="/docs/">DEVELOPER DOCS</a></div>
     </nav>
 
     <div class="sg-sections">
@@ -17,6 +18,8 @@
         {>"_sg/sections/ui-components" /}
         {>"_sg/sections/typography" /}
         {>"_sg/sections/knewcons" /}
+        <!--
         {>"_sg/sections/guidelines" /}
+        -->
     </div>
 </div>
